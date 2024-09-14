@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "$BUILD_NUMBER"
+                mail to:"nikhilgaysamudre99@gmail.com",subject:"subject",body:"this is my test body $BUILD_NUMBER"
+            }
+        }
+    }
+}
